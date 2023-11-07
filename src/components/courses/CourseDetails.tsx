@@ -4,15 +4,15 @@ import "swiper/swiper-bundle.css";
 import "./courses.css";
 import { useLocation } from "react-router-dom";
 import { ICourse } from "../../type/course";
+import { Col, Collapse, Row } from "antd";
 
-
-
+const { Panel } = Collapse;
 
 const CourseDetails = () => {
   const state = useLocation();
   // console.log("🚀 ~ file: CourseDetails.tsx:9 ~ state:", state)
   const course: ICourse = state.state;
-    console.log("🚀 ~ file: CourseDetails.tsx:11 ~ course:", course);
+  console.log("🚀 ~ file: CourseDetails.tsx:11 ~ course:", course);
 
   useEffect(() => {
     const swiper = new Swiper(".blog-slider", {
@@ -33,8 +33,6 @@ const CourseDetails = () => {
     };
   }, []);
 
-  
-
   return (
     <div className="blog-slider">
       <div className="blog-slider__wrp swiper-wrapper">
@@ -46,14 +44,40 @@ const CourseDetails = () => {
             <span className="blog-slider__code">{course.duration}</span>
             <div className="blog-slider__title">L{course.name}</div>
             <div className="blog-slider__text">{course.description}</div>
-            <section style={{ marginBlock:"1em",fontSize:"1em",display:"flex ", flexDirection:"column",gap:"0.6em"}}>
-              <h6 >{course.instructor}</h6>
-              <div className="">Status: {course.enrollmentStatus}</div>
-              <div className="">Schedules {course.schedule}</div>
-              <div className="">Location: {course.location}</div>
-              <div className="">prerequisites {course.prerequisites}</div>
-              <div className="">{course.syllabus.length}</div>
-            </section>
+            <Row
+            // style={{
+            //   display: "flex",
+            // }}
+            >
+              <Col lg={12} md={12} sm={24} xs={24}
+                style={{
+                  marginBlock: "1em",
+                  fontSize: "1em",
+                  display: "flex ",
+                  flexDirection: "column",
+                  gap: "0.6em",
+                }}
+              >
+                <h6>{course.instructor}</h6>
+                <div className="">Status: {course.enrollmentStatus}</div>
+                <div className="">Schedules {course.schedule}</div>
+                <div className="">Location: {course.location}</div>
+                <div className="">prerequisites {course.prerequisites}</div>
+                <div className="">{course.syllabus.length}</div>
+              </Col>
+              <Col lg={12} md={12} sm={24} xs={24}>
+                <Collapse accordion style={{ background: "white" }}>
+                  {course?.syllabus.map((item) => (
+                    <Panel
+                      key={item.week.toString()}
+                      header={`Week ${item.week}: ${item.topic}`}
+                    >
+                      <p>{item.content}</p>
+                    </Panel>
+                  ))}
+                </Collapse>
+              </Col>
+            </Row>
             <a href="#" className="blog-slider__button">
               Enroll
             </a>
