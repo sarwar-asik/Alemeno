@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Layout, Button, Drawer } from "antd";
 import { Menu } from "antd";
 
@@ -30,9 +30,9 @@ const Navbar = () => {
               {/* <Link to="/" className="brand-font">
                 Alemeno
               </Link> */}
-              <a href="" className="brand-font">
+              <Link to="/" className="brand-font">
                 Alemeno
-              </a>
+              </Link>
             </div>
             <div className="navbar-menu">
               <div className="leftMenu">

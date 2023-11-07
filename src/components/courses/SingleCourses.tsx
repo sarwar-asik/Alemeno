@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Card, Image, Typography, Space, Row, Col } from "antd";
 import {
   HeartOutlined,
@@ -33,7 +33,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
           boxShadow: "6px 6px 0 black",
         }}
         cover={
-          <Image alt="Blog Image" src={course.thumbnail} preview={false} />
+          <Image  alt="Blog Image" src={course.thumbnail} preview={true} />
         }
       >
         <Space direction="vertical" size={0} style={{ width: "100%" }}>

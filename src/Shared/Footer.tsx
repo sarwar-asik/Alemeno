@@ -1,10 +1,10 @@
 import React from "react";
-import { Row, Col, Typography, Input, Button } from "antd";
+import { Row, Col, Typography} from "antd";
 import {
   TwitterOutlined,
   YoutubeOutlined,
   InstagramOutlined,
-  MailOutlined,
+
 } from "@ant-design/icons";
 import Link from "antd/es/typography/Link";
 
