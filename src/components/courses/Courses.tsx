@@ -23,7 +23,7 @@ const Courses = () => {
   return (
     <div>
       <h2>Courses Page{courses.length}</h2>
-      <Row lg={3} md={2} sm={1} gutter={[10,10]}>
+      <Row gutter={[10,10]}>
         {
             courses?.map((course:ICourse,i:number)=>{
                 return <SingleCourses  course={course} key={i}/>

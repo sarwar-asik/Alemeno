@@ -1,4 +1,5 @@
 import "./App.css";
+import Header from "./components/Home/Header";
 import Courses from "./components/courses/Courses";
 
 function HomePage() {
@@ -8,6 +9,7 @@ function HomePage() {
         minHeight: "100vh",
       }}
     >
+      <Header/>
       <Courses></Courses>
       <h2>This is Home page</h2>
     </div>
