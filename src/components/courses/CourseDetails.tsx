@@ -4,6 +4,7 @@ import 'swiper/swiper-bundle.css';
 import './courses.css';
 
 const CourseDetails: React.FC = () => {
+    
     useEffect(() => {
         const swiper = new Swiper('.blog-slider', {
           spaceBetween: 30,
@@ -38,7 +39,8 @@ const CourseDetails: React.FC = () => {
           <a href="#" className="blog-slider__button">READ MORE</a>
         </div>
       </div>
-      <div className="blog-slider__item swiper-slide">
+      
+      {/* <div className="blog-slider__item swiper-slide">
         <div className="blog-slider__img">
           <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt=""/>
         </div>
@@ -60,7 +62,7 @@ const CourseDetails: React.FC = () => {
           <div className="blog-slider__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae voluptate repellendus magni illo ea animi?</div>
           <a href="#" className="blog-slider__button">READ MORE</a>
         </div>
-      </div>
+      </div> */}
       
     </div>
     <div className="blog-slider__pagination"></div>
