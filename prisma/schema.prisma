@@ -17,7 +17,7 @@ model test{
   user Int
 }
 
-model Course {
+model Courses {
   id             Int     @id @default(autoincrement())
   name           String
   instructor     String
@@ -38,7 +38,7 @@ model Syllabus {
   topic     String
   content   String
   courseId  Int
-  course    Course @relation(fields: [courseId], references: [id])
+  course    Courses @relation(fields: [courseId], references: [id])
 }
 
 model Student {
@@ -46,5 +46,5 @@ model Student {
   name    String
   email   String
   courseId Int
-  course  Course   @relation(fields: [courseId], references: [id])
+  course  Courses  @relation(fields: [courseId], references: [id])
 }
