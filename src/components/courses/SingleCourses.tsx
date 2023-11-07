@@ -6,10 +6,12 @@ import {
   ArrowRightOutlined,
 } from "@ant-design/icons";
 import { ICourse } from "../../type/course";
+import { useNavigate } from "react-router-dom";
 
 const { Text, Title } = Typography;
 
 const SingleCourses = ({ course }: { course: ICourse }) => {
+  const navigate = useNavigate();
   const [liked, setLiked] = useState(false);
   console.log(course, "course");
   // const {name,description,duration,enrollmentStatus,} = course
@@ -31,11 +33,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
           boxShadow: "6px 6px 0 black",
         }}
         cover={
-          <Image
-            alt="Blog Image"
-            src={course.thumbnail}
-            preview={false}
-          />
+          <Image alt="Blog Image" src={course.thumbnail} preview={false} />
         }
       >
         <Space direction="vertical" size={0} style={{ width: "100%" }}>
@@ -80,7 +78,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
               fontSize: "1rem",
             }}
           >
-           {course.description}
+            {course.description}
           </Text>
         </Space>
         <Row
@@ -98,7 +96,13 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
               cursor: "pointer",
             }}
           >
-            <Space>
+            <Space
+              onClick={() =>
+                navigate(`/courseDetails/${course?.name}`, {
+                  state: course,
+                })
+              }
+            >
               <Text style={{ fontSize: "1rem", fontWeight: "semibold" }}>
                 View more
               </Text>

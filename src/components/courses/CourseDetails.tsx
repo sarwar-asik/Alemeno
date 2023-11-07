@@ -2,8 +2,12 @@ import React, { useEffect } from 'react';
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 import './courses.css';
+import { useLocation } from 'react-router-dom';
 
 const CourseDetails: React.FC = () => {
+    const { state } = useLocation();
+    console.log("🚀 ~ file: CourseDetails.tsx:9 ~ state:", state)
+
     
     useEffect(() => {
         const swiper = new Swiper('.blog-slider', {

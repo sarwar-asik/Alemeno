@@ -4,7 +4,9 @@ import SingleCourses from "./SingleCourses";
 import { ICourse } from "../../type/course";
 
 const Courses = () => {
+
   const [courses, setCourses] = useState<any>([]);
+  
 
   useEffect(() => {
     async function fetchData() {
