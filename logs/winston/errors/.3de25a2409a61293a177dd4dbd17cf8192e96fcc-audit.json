@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\WEB\\JOB\\Alemeno\\alemeno_backend\\logs\\winston\\errors\\.3de25a2409a61293a177dd4dbd17cf8192e96fcc-audit.json",
+    "files": [
+        {
+            "date": 1699374349698,
+            "name": "C:\\WEB\\JOB\\Alemeno\\alemeno_backend\\logs\\winston\\errors\\phu-2023-07-11-22-error.log",
+            "hash": "2b7a263f13f5511058c968de37ea69188ed58de44b5f539988de3a5046560d4c"
+        }
+    ],
+    "hashType": "sha256"
+}

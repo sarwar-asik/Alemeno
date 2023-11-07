@@ -18,7 +18,7 @@ app.use('/', (req: Request, res: Response) => {
   console.log(req?.body,"https//:localhost:5000/");
   res.json({
     status:httpStatus.OK,
-    message:'book-listing-server server is running on 5000'
+    message:'Task server is running on 5000'
   });
 });
 
