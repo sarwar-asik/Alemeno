@@ -11,12 +11,11 @@ const Header = () => {
         align="middle"
         style={{
           padding: "80px 20px",
-        //   width: "100%",
-        //   background:"red"
-
+     
+        //   background: "red",
         }}
       >
-        <Col xs={24} md={12} lg={8}>
+        <Col xs={24} md={12} lg={16} style={{marginInline:"auto"}}>
           <Title level={1} style={{ marginBottom: 16, fontWeight: "bold" }}>
             <span style={{ position: "relative" }}>Write once,</span>
             <br />
@@ -55,8 +54,7 @@ const Header = () => {
           </Row>
         </Col>
 
-
-        <Col xs={24} md={12} lg={8}>
+        <Col xs={24} md={12} lg={8} style={{marginInline:"auto"}}>
           <Card
             style={{
               borderRadius: "0 0 8px 8px", // Adjust the top radius as needed

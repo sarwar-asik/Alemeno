@@ -53,7 +53,7 @@ const ListHeader: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 
 const Footer = () => {
   return (
-    <div style={{ background: "#f0f2f5", color: "#001529" }}>
+    <div style={{ background: "#f0f2f5", color: "#001529",marginTop:"2rem" }}>
       <Row
         justify="center"
         align="top"

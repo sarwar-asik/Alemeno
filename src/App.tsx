@@ -11,7 +11,6 @@ function HomePage() {
     >
       <Header/>
       <Courses></Courses>
-      <h2>This is Home page</h2>
     </div>
   );
 }

@@ -12,6 +12,7 @@ const { Text, Title } = Typography;
 const SingleCourses = ({ course }: { course: ICourse }) => {
   const [liked, setLiked] = useState(false);
   console.log(course, "course");
+  // const {name,description,duration,enrollmentStatus,} = course
 
   return (
     <Col
@@ -32,7 +33,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
         cover={
           <Image
             alt="Blog Image"
-            src="https://images.pexels.com/photos/2967810/pexels-photo-2967810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src={course.thumbnail}
             preview={false}
           />
         }
@@ -46,7 +47,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
               color: "white",
             }}
           >
-            React
+            {course.name}
           </Text>
           <Title
             level={3}
@@ -58,7 +59,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
               fontSize: "1.5rem",
             }}
           >
-            <Text> React v18.0 </Text>
+            <Text> {course.instructor} </Text>
             <Space onClick={() => setLiked(!liked)}>
               {liked ? (
                 <HeartFilled
@@ -79,8 +80,7 @@ const SingleCourses = ({ course }: { course: ICourse }) => {
               fontSize: "1rem",
             }}
           >
-            In this post, we will give an overview of what is new in React 18,
-            and what it means for the future.
+           {course.description}
           </Text>
         </Space>
         <Row
