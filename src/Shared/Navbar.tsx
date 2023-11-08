@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Layout, Button, Drawer } from "antd";
-import { Menu } from "antd";
+// import { Menu } from "antd";
 
 import { MenuOutlined } from "@ant-design/icons";
 import Sidebar from "./Sidebar";
@@ -12,7 +12,7 @@ const Navbar = () => {
     setVisible(!visible);
   };
 
-  let { pathname: location } = useLocation();
+  const { pathname: location } = useLocation();
   useEffect(() => {
     setVisible(false);
   }, [location]);
@@ -59,12 +59,12 @@ const Navbar = () => {
                 visible={visible}
                 style={{ zIndex: 99999 }}
               >
-                <Menu mode={"inline"}>
+                {/* <Menu mode={"inline"}>
                   <Menu.Item key="explore">Explore</Menu.Item>
                   <Menu.Item key="features">Features</Menu.Item>
                   <Menu.Item key="about">About Us</Menu.Item>
                   <Menu.Item key="contact">Contact Us</Menu.Item>
-                </Menu>
+                </Menu> */}
                 <Sidebar mode={"inline"} />
               </Drawer>
             </div>
