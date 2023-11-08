@@ -45,8 +45,8 @@ const DashBoardStudent: React.FC = () => {
         </Header>
         <Content
           style={{
-            margin: "24px 16px",
-            padding: 24,
+            margin: "24px 8px",
+            padding: 16,
             minHeight: 280,
             background: colorBgContainer,
           }}
