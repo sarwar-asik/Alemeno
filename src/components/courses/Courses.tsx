@@ -1,36 +1,26 @@
 import { Row } from "antd";
-import { useEffect, useState } from "react";
+
 import SingleCourses from "./SingleCourses";
 import { ICourse } from "../../type/course";
+import useFetchData from "../../hooks/useFetchData";
 
 const Courses = () => {
 
-  const [courses, setCourses] = useState<any>([]);
-  
+//! called hook for fetch data/
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch("/courses.json");
-        const data = await res.json();
-        setCourses(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
+  const [courses] = useFetchData("/courses.json");
 
-    fetchData();
-  }, []);
-//   console.log(courses, "Courses");
+  // console.log(courses);
+
+
+  //   console.log(courses, "Courses");
   return (
     <div>
       <h2>Courses Page{courses.length}</h2>
-      <Row gutter={[10,10]}>
-        {
-            courses?.map((course:ICourse,i:number)=>{
-                return <SingleCourses  course={course} key={i}/>
-            })
-        }
+      <Row gutter={[10, 10]}>
+        {courses?.map((course: ICourse, i: number) => {
+          return <SingleCourses course={course} key={i} />;
+        })}
       </Row>
     </div>
   );
