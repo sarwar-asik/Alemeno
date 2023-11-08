@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Layout, Button, Drawer } from "antd";
+import { Layout, Button, Drawer, Menu } from "antd";
 // import { Menu } from "antd";
 
 import { MenuOutlined } from "@ant-design/icons";
 import Sidebar from "./Sidebar";
+import { NavItem } from "../conts/NavItem";
+// import NavItem from "../conts/NavItem";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -48,7 +50,13 @@ const Navbar = () => {
                 <MenuOutlined />
               </Button>
               <div className="rightMenu">
-                <Sidebar mode={"horizontal"} />
+                {/* <Sidebar mode={"horizontal"} /> */}
+                {/* <Menu mode={"horizontal"}>
+                  <Menu.Item key="explore">Explore</Menu.Item>
+                  <Menu.Item key="features">Features</Menu.Item>
+                
+                </Menu> */}
+                <Menu  mode="horizontal"  defaultSelectedKeys={['1']}  items={NavItem("nav")}/>
               </div>
 
               <Drawer

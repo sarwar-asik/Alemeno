@@ -11,6 +11,7 @@ const routes = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/courses", element: <Courses /> },
       { path: "/courseDetails/:name", element: <CourseDetails /> },
     ],
   },
@@ -19,7 +20,11 @@ const routes = createBrowserRouter([
     element: <UserDashBoard />,
     children: [
       {
-        path: "/dashboard/course",
+        path: "/dashboard/courses",
+        element: <Courses/>,
+      },
+      {
+        path: "/dashboard/enrolled",
         element: <Courses/>,
       },
     ],

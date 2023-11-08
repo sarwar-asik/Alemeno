@@ -1,25 +1,76 @@
-import { Menu } from "antd";
+import { Avatar, MenuProps } from "antd";
 
 import { Link } from "react-router-dom";
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-const NavItem = () => {
-  return (
-    <>
-      <Menu.Item key="mail">
-        <Link to="/">Home</Link>
-      </Menu.Item>
-      <SubMenu key="blogs" title={<span>Blogs</span>}>
-        <MenuItemGroup title="Item 1">
-          <Menu.Item key="setting:1">Option 1</Menu.Item>
-          <Menu.Item key="setting:2">Option 2</Menu.Item>
-        </MenuItemGroup>
-      </SubMenu>
-      <Menu.Item key="contact">
-        <Link to="">DashBoard</Link>
-      </Menu.Item>
-    </>
-  );
-};
+import {
+  HomeOutlined,
+  TableOutlined,
+  DashboardFilled,
+} from "@ant-design/icons";
 
-export default NavItem;
+export const NavItem = (name: "sidebar" | "dashboard" | "nav") => {
+  const navBarItems: MenuProps["items"] = [
+    {
+      label: <Link to="/">Home</Link>,
+      key: "/Home",
+    },
+    {
+      label: <Link to="/courses">Courses</Link>,
+      key: "/courses",
+    },
+    {
+      label: <Link to="/">Blogs</Link>,
+      key: "/blogs",
+    },
+    {
+      label: <Link to="/dashboard">DashBoards</Link>,
+      key: "/dashboard",
+    },
+    // {
+    //   label: (
+    //     <Link to="/dashboard">
+    //       <Avatar />
+    //     </Link>
+    //   ),
+    //   key: "/user-profile",
+    //   //   icon: <Avatar />,
+    // },
+  ];
+  const SideBarItems: MenuProps["items"] = [
+    {
+      label: <Link to="/">Home</Link>,
+      key: "/Home",
+      icon: <HomeOutlined />,
+    },
+    {
+      label: <Link to="/courses">Courses</Link>,
+      key: "/courses",
+      icon: <TableOutlined />,
+    },
+    {
+      label: <Link to="/dashboard">DashBoard</Link>,
+      key: "/dashboard",
+      icon: <DashboardFilled />,
+    },
+  ];
+  const DashBoardItems: MenuProps["items"] = [
+    {
+      label: <Link to="/">Home</Link>,
+      key: "/Home",
+      icon: <HomeOutlined />,
+    },
+    {
+      label: <Link to="/dashboard/courses">Courses</Link>,
+      key: "/courses",
+      icon: <TableOutlined />,
+    },
+    {
+      label: <Link to="/dashboard/enrolled">Enrolled</Link>,
+      key: "/enrolled",
+      icon: <DashboardFilled />,
+    },
+  ];
+
+  if (name === "nav") return navBarItems;
+  else if (name === "sidebar") return SideBarItems;
+  else if (name === "dashboard") return DashBoardItems;
+};
