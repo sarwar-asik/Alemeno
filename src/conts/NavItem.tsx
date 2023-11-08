@@ -1,4 +1,4 @@
-import { Avatar, MenuProps } from "antd";
+import { MenuProps } from "antd";
 
 import { Link } from "react-router-dom";
 import {

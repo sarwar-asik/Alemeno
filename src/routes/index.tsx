@@ -4,6 +4,7 @@ import HomePage from "../App";
 import CourseDetails from "../components/courses/CourseDetails";
 import UserDashBoard from "../layout/DashBoardLayout";
 import Courses from "../components/courses/Courses";
+import EnrolledStudent from "../components/dashboard/EnrolledStudent";
 
 const routes = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/dashboard/enrolled",
-        element: <Courses/>,
+        element: <EnrolledStudent/>,
       },
     ],
   },
