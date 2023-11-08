@@ -22,11 +22,11 @@ const routes = createBrowserRouter([
     children: [
       {
         path: "/dashboard/courses",
-        element: <Courses/>,
+        element: <Courses />,
       },
       {
         path: "/dashboard/enrolled",
-        element: <EnrolledStudent/>,
+        element: <EnrolledStudent />,
       },
     ],
   },

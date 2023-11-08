@@ -1,12 +1,13 @@
-import React from "react";
-
-import { Layout, Menu, theme } from "antd";
+import React, { useState } from "react";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, Button, theme } from "antd";
 import { NavItem } from "../conts/NavItem";
 import { Outlet } from "react-router-dom";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Sider, Content } = Layout;
 
-const UserDashBoard: React.FC = () => {
+const DashBoardStudent: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -14,45 +15,47 @@ const UserDashBoard: React.FC = () => {
   return (
     <Layout>
       <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={(broken) => {
-          console.log(broken);
-        }}
-        onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
-        }}
+        trigger={null}
         style={{
           minHeight: "100vh",
         }}
+        collapsible
+        collapsed={collapsed}
       >
         <div className="demo-logo-vertical" />
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={["4"]}
+          defaultSelectedKeys={["1"]}
           items={NavItem("dashboard")}
         />
       </Sider>
-      <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
-        <Content style={{ margin: "24px 16px 0" }}>
-          <div
+      <Layout >
+        <Header style={{ padding: 0, background: colorBgContainer }}>
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => setCollapsed(!collapsed)}
             style={{
-              padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
+              fontSize: "16px",
+              width: 64,
+              height: 64,
             }}
-          >
-            <Outlet></Outlet>t
-          </div>
+          />
+        </Header>
+        <Content
+          style={{
+            margin: "24px 16px",
+            padding: 24,
+            minHeight: 280,
+            background: colorBgContainer,
+          }}
+        >
+          <Outlet />
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2023 Created by Ant UED
-        </Footer>
       </Layout>
     </Layout>
   );
 };
 
-export default UserDashBoard;
+export default DashBoardStudent;
